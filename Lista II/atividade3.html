@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let acertou = false;
+
+        let tentativas = -1;
+
+        let aleatoio = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
+        window.alert("aleatorio = " + aleatoio);
+
+        while (acertou === false) 
+        {
+            tentativas++;
+
+            let input = prompt("Digite um número inteiro:");
+
+            if(input > aleatoio)
+            {
+                window.alert("Maior que o aleatorio");
+            }
+            else if(input < aleatoio)
+            {
+                window.alert("Menor que o aleatorio");
+            }
+
+            if(input == aleatoio)
+                acertou = true;
+        }
+
+        if(acertou === true)
+        {
+            window.alert("Parabens, você acertou, qtd de tentativas: " +tentativas);
+        }
+    </script>
+</body>
+
+</html>

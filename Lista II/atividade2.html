@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let maiorNumero = 0;
+        let menorNumero = 0;
+
+        for (i = 0; i < 10; i++) {
+            let input = prompt("Digite um número inteiro:");
+            
+            if (isNaN(input)) {
+                console.log("Entrada inválida!");
+            }
+
+            if (i === 0) {
+                maiorNumero = input;
+                menorNumero = input;
+            }
+
+            if (parseInt(input) < menorNumero) 
+            {
+                menorNumero = input;
+            }
+            if (parseInt(input) > menorNumero) 
+            {
+                maiorNumero = input;
+            }
+            console.log(input);
+        }
+
+        console.log("menor numero é "+ menorNumero);
+        console.log("maior numero é "+ maiorNumero);
+
+    </script>
+</body>
+
+</html>
