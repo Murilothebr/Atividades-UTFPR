@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let continuar = true;
+        let codigo;
+        let codigoMaisAlto, codigoMaisBaixo, codigoMaisGordo, codigoMaisMagro;
+        let maiorAltura = 0, menorAltura = 100, mediaAltura = 0;
+        let maiorPeso = 0, menorPeso = 1000, mediaPeso = 0;
+        let quantidadeClientes = 0;
+
+        let somaPeso = 0;
+        let somaAltura = 0;
+
+
+        while (continuar) {
+
+            codigo = prompt("Digite o seu código:");
+
+            altura = parseFloat(prompt("Digite a sua altura em metros:"));
+
+            if (isNaN(altura) || altura <= 0 || altura > 3) {
+                alert("Altura e/ou peso inválidos, digite novamente.");
+                continue;
+            }
+
+            if (altura > maiorAltura) {
+                maiorAltura = altura;
+                codigoMaisAlto = codigo;
+            }
+            else if (altura < menorAltura) {
+                menorAltura = altura;
+                codigoMaisBaixo = codigo;
+            }
+
+            peso = parseFloat(prompt("Digite o seu peso em kg:"));
+            if (isNaN(peso) || peso <= 0 || peso > 300) {
+                alert("Altura e/ou peso inválidos, digite novamente.");
+                continue;
+            }
+
+            if (peso > maiorPeso) {
+                maiorPeso = peso;
+                codigoMaisGordo = codigo;
+            }
+
+            if (peso < menorPeso) {
+                menorPeso = peso;
+                codigoMaisMagro = codigo;
+            }
+
+            somaPeso += peso;
+            somaAltura += altura;
+            quantidadeClientes++;
+
+            continuar = confirm("Deseja cadastrar outro cliente?");
+        }
+
+        mediaAltura = somaAltura / quantidadeClientes;
+        mediaPeso = somaPeso / quantidadeClientes;
+
+        console.log("Cliente mais alto - Código:", codigoMaisAlto, "Altura:", maiorAltura.toFixed(2), "m");
+        console.log("Cliente mais baixo - Código:", codigoMaisBaixo, "Altura:", menorAltura.toFixed(2), "m");
+        console.log("Cliente mais gordo - Código:", codigoMaisGordo, "Peso:", maiorPeso.toFixed(2), "kg");
+        console.log("Cliente mais magro - Código:", codigoMaisMagro, "Peso:", menorPeso.toFixed(2), "kg");
+        console.log("Média de altura:", mediaAltura, "m");
+        console.log("Média de peso:", mediaPeso, "kg");
+
+        const calcularNovamente = confirm("Deseja calcular novamente?");
+
+        if (calcularNovamente) {
+            location.reload();
+        } else {
+            if (confirm("Deseja ir para a página de cálculo do IMC?"));
+            location.href = "https://www.tuasaude.com/calculadora/imc/";
+        }
+    </script>
+</body>
+
+</html>
