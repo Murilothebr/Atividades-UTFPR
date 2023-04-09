@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Verificar se um número é par ou ímpar</title>
+  </head>
+  <body>
+    <script>
+
+      function solicitarNumero() {
+        while (true) {
+          const input = prompt('Digite um número:');
+          const num = Number(input);
+          if (isNaN(num)) {
+            alert('Por favor, digite um número válido.');
+          } else {
+            window.num = num;
+            return;
+          }
+        }
+      }
+
+      function verificarParOuImpar() {
+        const num = window.num;
+        const resto = num % 2;
+        if (resto === 0) {
+          alert(`${num} é um número par.`);
+        } else {
+          alert(`${num} é um número ímpar.`);
+        }
+      }
+
+      solicitarNumero();
+      verificarParOuImpar();
+    </script>
+  </body>
+</html>

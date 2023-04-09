@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const calcularPontuacao = () => {
+            const solicitarVitorias = () => parseInt(prompt("Digite o número de vitórias: "));
+            const solicitarEmpates = () => parseInt(prompt("Digite o número de empates: "));
+            const solicitarDerrotas = () => parseInt(prompt("Digite o número de derrotas: "));
+
+            const numVitorias = solicitarVitorias();
+            const numEmpates = solicitarEmpates();
+            const numDerrotas = solicitarDerrotas();
+
+            const pontuacao = numVitorias * 3 + numEmpates;
+
+            const solicitarGolsMarcados = () => parseInt(prompt("Digite o número de gols marcados: "));
+            const solicitarGolsSofridos = () => parseInt(prompt("Digite o número de gols sofridos: "));
+
+            const golsMarcados = solicitarGolsMarcados();
+            const golsSofridos = solicitarGolsSofridos();
+
+            console.log(`O time do Batel obteve ${numVitorias} vitórias, ${numEmpates} empates e ${numDerrotas} derrotas.`);
+            console.log(`O time marcou ${golsMarcados} gols e sofreu ${golsSofridos} gols.`);
+            console.log(`Total de pontos: ${pontuacao}`);
+
+            return pontuacao;
+        }
+
+        calcularPontuacao();
+
+
+
+    </script>
+</body>
+
+</html>

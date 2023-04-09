@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const precoMaca = 1.3;
+        const precoLaranja = 0.8;
+
+        const custoMaca = qtd => qtd <= 12 ? qtd * precoMaca : qtd * precoMaca * 0.9;
+        const custoLaranja = qtd => qtd <= 20 ? qtd * precoLaranja : qtd * precoLaranja * 0.8;
+        const custoTotal = (qtdMaca, qtdLaranja) => custoMaca(qtdMaca) + custoLaranja(qtdLaranja);
+
+        const qtdMaca = parseInt(prompt("Digite a quantidade de maçãs compradas: "));
+        const qtdLaranja = parseInt(prompt("Digite a quantidade de laranjas compradas: "));
+
+        const valorMaca = custoMaca(qtdMaca);
+        const valorLaranja = custoLaranja(qtdLaranja);
+        
+        const valorTotal = custoTotal(qtdMaca, qtdLaranja);
+
+        console.log(`Custo total para as maçãs: R$ ${valorMaca.toFixed(2)}`);
+        console.log(`Custo total para as laranjas: R$ ${valorLaranja.toFixed(2)}`);
+        console.log(`Valor total da compra: R$ ${valorTotal.toFixed(2)}`);
+
+    </script>
+</body>
+
+</html>

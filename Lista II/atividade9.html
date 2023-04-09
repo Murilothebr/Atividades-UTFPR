@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const HORAS_DIA = 24;
+        const MINUTOS_HORA = 60;
+        const BATIMENTOS_MINUTO = 80;
+
+        function calculaDiasDeVida(idade) {
+            return idade * 365;
+        }
+
+        function calculaBatimentos(idade) {
+            const diasDeVida = calculaDiasDeVida(idade);
+            const horasDeVida = diasDeVida * HORAS_DIA;
+            const minutosDeVida = horasDeVida * MINUTOS_HORA;
+            return minutosDeVida * BATIMENTOS_MINUTO;
+        }
+
+        const idade = prompt("Qual a sua idade?");
+        const diasDeVida = calculaDiasDeVida(idade);
+        const batimentos = calculaBatimentos(idade);
+
+        alert(`Você já viveu ${diasDeVida} dias com ${batimentos} batimentos cardíacos.`);
+
+    </script>
+</body>
+
+</html>
