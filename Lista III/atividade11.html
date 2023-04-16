@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contador de vogais</title>
+  </head>
+  <body>
+    <label for="texto">Digite uma string:</label>
+    <input type="text" id="texto">
+    <button onclick="contarVogais()">Contar vogais</button>
+    <p id="resultado"></p>
+
+    <script>
+      function contarVogais() {
+        let vogais = "aeiouAEIOU";
+        let texto = document.getElementById("texto").value;
+        let contador = 0;
+
+        for (let i = 0; i < texto.length; i++) {
+          if (vogais.indexOf(texto[i]) !== -1) {
+            contador++;
+          }
+        }
+
+        let resultado = `A string "${texto}" possui ${contador} vogais.`;
+        alert(resultado);
+        console.log(resultado);
+
+        let elemento = document.getElementById("resultado");
+        elemento.innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>
