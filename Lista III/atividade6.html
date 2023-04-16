@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Incrementar Hora</title>
+</head>
+<body>
+	<h1>Incrementar Hora</h1>
+
+	<p>A hora atual é: <input type="text" id="horaAtual"></p>
+	<button onclick="incrementarHora()">Incrementar Hora</button>
+
+	<script>
+		let horaAtual = new Date();
+
+		function incrementarHora() {
+			horaAtual.setSeconds(horaAtual.getSeconds() + 1);
+			document.getElementById("horaAtual").value = formatarHora(horaAtual);
+		}
+
+		function formatarHora(hora) {
+			let horas = hora.getHours().toString().padStart(2, "0");
+			let minutos = hora.getMinutes().toString().padStart(2, "0");
+			let segundos = hora.getSeconds().toString().padStart(2, "0");
+			return `${horas}:${minutos}:${segundos}`;
+		}
+
+		document.getElementById("horaAtual").value = formatarHora(horaAtual);
+	</script>
+</body>
+</html>
