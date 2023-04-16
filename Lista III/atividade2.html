@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        let lista = [...Array(11).keys()];
+        console.log(lista);
+
+        lista.push("onze");
+        console.log(lista);
+
+        lista.reverse();
+        console.log(lista);
+
+        lista.shift();
+        console.log(lista);
+
+        lista.unshift(true);
+        console.log(lista);
+
+        lista.reverse();
+        console.log(lista);
+
+        lista.pop();
+        console.log(lista);
+
+        lista.splice(2, 2, "A", "B", "C");
+        console.log(lista);
+
+    </script>
+</body>
+
+</html>
