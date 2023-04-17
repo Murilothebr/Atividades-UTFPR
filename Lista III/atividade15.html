@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo de função em JavaScript</title>
+    <script>
+        function somaDigitos(numero) {
+            var soma = 0;
+            for (var i = 0; i < numero.length; i++) {
+                soma += parseInt(numero.charAt(i));
+            }
+            return soma;
+        }
+
+        function calcular() {
+            var numero = document.getElementById("numero").value;
+            var resultado = somaDigitos(numero);
+            alert("A soma dos dígitos é: " + resultado);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Exemplo de função em JavaScript</h1>
+    <p>Digite um número para calcular a soma de seus dígitos:</p>
+    <input type="text" id="numero">
+    <button onclick="calcular()">Calcular</button>
+</body>
+
+</html>

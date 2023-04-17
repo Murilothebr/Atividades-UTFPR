@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inversão de Strings</title>
+  <script src="atividade13.js"></script>
+</head>
+<body>
+  <h1>Inversão de Strings</h1>
+  <button onclick="exibirStringInvertida()">Inverter</button>
+  <script>
+    function exibirStringInvertida() {
+      let str = prompt('Digite uma palavra ou frase para inverter:');
+      let strInvertida = inverterString(str);
+      alert('A string invertida é: ' + strInvertida);
+
+      while(confirm("Deseja inverter outro texto?"))
+      {
+        let str = prompt('Digite uma palavra ou frase para inverter:');
+        let strInvertida = inverterString(str);
+        alert('A string invertida é: ' + strInvertida);
+      }
+    }
+  </script>
+</body>
+</html>
